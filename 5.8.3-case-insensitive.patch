@@ -1,0 +1,29 @@
+--- origsrc/kactivitymanagerd-5.8.3/src/service/Features.cpp	2016-11-01 06:59:38.000000000 -0500
++++ src/kactivitymanagerd-5.8.3/src/service/Features.cpp	2016-11-14 23:06:00.665203000 -0600
+@@ -19,7 +19,8 @@
+  */
+ 
+ // Self
+-#include "Features.h"
++#include <features.h>
++#include "../service/Features.h"
+ 
+ // KDE
+ #include <kdbusconnectionpool.h>
+--- origsrc/kactivitymanagerd-5.8.3/src/service/Features.h	2016-11-01 06:59:38.000000000 -0500
++++ src/kactivitymanagerd-5.8.3/src/service/Features.h	2016-11-28 13:35:30.071731300 -0600
+@@ -18,6 +18,9 @@
+  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#if !defined _FEATURES_H && !defined(Q_MOC_RUN)
++#include </usr/include/features.h>
++#else
+ #ifndef FEATURES_H
+ #define FEATURES_H
+ 
+@@ -62,3 +65,4 @@ private:
+ };
+ 
+ #endif // FEATURES_H
++#endif
